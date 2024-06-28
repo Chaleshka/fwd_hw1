@@ -37,7 +37,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           name: build-artifact  # Имя артефакта
-          path: ./build  # Путь к директории с результатами сборки
+          path: .  # Путь к директории с результатами сборки
 
   deploy:
     environment:
