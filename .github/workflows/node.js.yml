@@ -28,5 +28,5 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN}}
-        publish_branch: gh-pages  # Ensure this is the correct branch
+        publish_branch: main  # Ensure this is the correct branch
         publish_dir: .  # Adjust this to the directory with your output files
