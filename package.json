@@ -1,0 +1,26 @@
+{
+  "name": "and.pav",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup --config rollup.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "date-fns": "^3.6.0",
+    "express": "^4.19.2",
+    "lodash-es": "^4.17.21",
+    "socket.io-client": "^4.7.5"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "rollup": "^4.18.0",
+    "tslib": "^2.6.3"
+  },
+  "description": ""
+}
