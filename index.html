@@ -6,12 +6,183 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Page</title>
-  <script type="module" crossorigin src="/fwd_hw1/assets/main-BTwjgagD.js"></script>
-  <link rel="modulepreload" crossorigin href="/fwd_hw1/assets/client-CADlzgmn.js">
-  <link rel="stylesheet" crossorigin href="/fwd_hw1/assets/main-CV12nxxN.css">
+    <style>
+        html{
+            font-size: 18px;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+        }
+
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        main{
+            margin-left: 30px;
+        }
+
+        main>section{
+            margin-top: 30px;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+        }
+
+        #Contacts img{
+            height: 50px;
+        }
+        
+        #Projects h3{
+            margin: 0 0 0 0;
+        }
+
+        h2, #Contacts{
+            text-align: center;
+        }
+        
+
+        .container {
+            margin-left: -30px;
+            display: flex;
+            flex-wrap: wrap;
+            padding-left: 70px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 40px;
+        }
+
+        .text {
+            width: auto;
+        }
+
+        .images {
+            width: auto;
+            display: flex;
+            flex-direction:row;
+            align-items: center;
+        }
+
+        .images-right img{
+            margin-left: 20px;
+        }
+        
+        .images-left img{
+            margin-right: 20px;
+        }
+    </style>
 </head>
 
 <body>
+    <header id="main">
+        <h1>Andrew's personal page</h1>
+        <nav>
+            <a href="#main">Home</a>
+            <a href="#About">About</a>
+            <a href="#Projects">Projects</a>
+            <a href="#Contacts">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="About">
+            <h2>About Me</h2>
+            <div>
+                <section class="container">
+                    <div class="text">
+                        Hello, It's my personal page. I'm Andrew Pavlov and I'm 19 years old.<br>
+                        I'm from Saint-Petersburg and now I'm a student of Innopolis University (B23). <br>
+                    </div>
+                    <div class="images-right">
+                        <img class="floating-image" src="photo.jpg" alt="my photo" style="height: 300px;" >
+                        <img class="floating-image" src="photo2.jpg" alt="my photo" style="height: 300px;" >
+                    </div>
+                </section>
+                <br>
+                <section class="container" style="background-color: #d8d8d8;">
+                    <div class="images-left">
+                        <img src="rowing.jpg" alt="my photo" style="height: 300px;"><br>
+                    </div>
+                    <div class="text">
+                        From ages 8 to 11, I practiced Aikido (Yoshinkan). From ages 11 to 16, I professionally practiced rowing.<br>
+                    </div>
+                </section>
+                <br>
+                <section class="container">
+                    <div class="text">
+                        From 2021 and for now I'm a technical administrator on one <a href="https://helldoorscp.shop">game project</a>
+                        <a id="ds-link" href="https://discord.gg/helldoor" target="_blank"><img src="discord-icon.jpg" alt="Discord" style="height: 24px;"></a><br>
+                    </div>
+                    <div class="images-right">
+                        <img src="HelldoorProject.jpg" alt="helldoor-project" style="height: 300px;">
+                    </div>
+                </section>
+            </div>
+        </section>
+        <br><br><hr>
+        <section id="Projects">
+            <h2>Projects</h2>
+            <ul>
+                <li>
+                    <div>
+                        <h3>AutoBackuper</h3>
+                            <section class="container">
+                                <div class="text" style="width: 40%;">
+                                    It's not ready, but now I'm in process of creating this project, but there I'm creating the programm 
+                                    that will be able to backup some files/folders on some disk system (Yandex.Disk, Google.Disk...)<br>
+                                </div>
+                                <div class="images-right">
+                                    <img src="autoBackup1.jpg" alt="AutoBackuper 1 photo">
+                                    <img src="autoBackup2.jpg" alt="AutoBackuper 2 photo" style="height: 300px;">
+                                </div>
+                            </section>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h3>HellDoor-project</h3>
+                        <section class="container">
+                            <div class="text" style="width: 35%;">
+                                As I said earlier, not my project, but I participate in support and development this game project.<br>
+                                There I'm creating plugins for game, some desktop software for server side, dome bots for Discord and sometomes developing or updating some features on web-site.
+                            </div>
+                            <div class="images-right">
+                                <img src="HellDoor-project1.jpg" alt="HellDoor-project 1 photo" style="height: 300px;">
+                                <img src="HellDoor-project2.jpg" alt="HellDoor-project 2 photo" style="height: 300px;">
+                                <img src="HellDoor-project3.jpg" alt="HellDoor-project 3 photo" style="max-height: 300px;">
+                            </div>
+                        </section>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <hr>
+        <section id="Contacts">
+            <h2>Social Media Links</h2>
+            <div>
+                <a id="gh-link" href="https://github.com/Chaleshka" target="_blank"><img src="github-icon.jpg" alt="GitHub"></a>
+                <a id="tg-link" href="https://t.me/chaleshka_0" target="_blank"><img src="telegram-icon.jpg" alt="Telegram"></a>
+                <a id="ds-link" href="https://discord.com/users/373086260526317568" target="_blank"><img src="discord-icon.jpg" alt="Discord"></a>
+                <a id="email" href="mailto:chaleshka@chaleshka.ru" target="_blank"><img src="email-icon.jpg" alt="Email"></a>
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>
