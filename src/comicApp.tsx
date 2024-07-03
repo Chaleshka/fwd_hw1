@@ -1,6 +1,15 @@
 import React from "react";
-import {Comic} from "./Comic";
 import { formatDistanceToNow } from "date-fns";
+
+export interface Comic {
+  id: number;
+  img: string;
+  alt: string;
+  safe_title: string;
+  year: number;
+  month: number;
+  day: number;
+}
 
 function ComicApp() {
   const [comic, setComic] = React.useState<Comic | null>(null);
