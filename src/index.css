@@ -1,0 +1,82 @@
+html{
+  font-size: 18px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+main{
+  margin-left: 30px;
+}
+
+main>section{
+  margin-top: 30px;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+
+#Contacts img{
+  height: 50px;
+}
+
+#Projects h3{
+  margin: 0 0 0 0;
+}
+
+h2, #Contacts{
+  text-align: center;
+}
+
+.h300{
+  height: 300px;
+}
+
+.container {
+  margin-left: -30px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 70px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 40px;
+}
+
+.text {
+  width: auto;
+}
+
+.images {
+  width: auto;
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+}
+
+.images-right img{
+  margin-left: 20px;
+}
+
+.images-left img{
+  margin-right: 20px;
+}
