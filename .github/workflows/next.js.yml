@@ -34,7 +34,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14'  # Выберите нужную версию Node.js, убедитесь, что она поддерживается Next.js
+          node-version: '18'  # Выберите нужную версию Node.js, убедитесь, что она поддерживается Next.js
           cache: 'npm'
 
       - name: Install dependencies
