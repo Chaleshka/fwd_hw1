@@ -7,7 +7,7 @@ interface NavProps {
 const Navigation: React.FC<NavProps> = ({ navs }) => {
     return (
       <header id="main">
-        <h1>Andrew's personal page</h1>
+        <h1>Andrew&apos;s personal page</h1>
         <nav>
           <a href="#main">Home</a>
           {Array.from(navs).map(([key, value]) => (

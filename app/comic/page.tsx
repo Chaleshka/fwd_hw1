@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import { formatDistanceToNow } from "date-fns";
+import "./../styles/comic.css";
 
 export interface Comic {
   id: number;
@@ -11,7 +14,7 @@ export interface Comic {
   day: number;
 }
 
-function ComicApp() {
+export default function Comic() {
   const [comic, setComic] = React.useState<Comic | null>(null);
   const [comicDate, setComicDate] = React.useState<Date>(new Date());
 
@@ -34,14 +37,22 @@ function ComicApp() {
   }, []);
 
   return (
-      <div className="container">
-        <h1 id="title">{comic?.safe_title}</h1>
-        <div id="comic-container" className="comic-container">
-            <img src={comic?.img} alt={comic?.alt} />
-            <p>Published on: {comicDate?.toLocaleDateString()} ({formatDistanceToNow(comicDate, { addSuffix: true })})</p>
+    <html lang="en">
+      <head>
+        <meta charSet="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My Personal Page</title>
+      </head>
+      <body>
+        <div className="container">
+          <h1 id="title">{comic?.safe_title}</h1>
+          <div id="comic-container" className="comic-container">
+              <img src={comic?.img} alt={comic?.alt} />
+              <p>Published on: {comicDate?.toLocaleDateString()} ({formatDistanceToNow(comicDate, { addSuffix: true })})</p>
+          </div>
         </div>
-      </div>
+      </body>
+    </html>
   );
 }
-
-export default ComicApp;

@@ -1,5 +1,5 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+# Simple workflow for deploying Next.js project to GitHub Pages
+name: Deploy Next.js project to Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -28,24 +28,33 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Set up Node
+
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '21.7.3'  # Выберите версию Node.js
+          node-version: '18'  # Выберите нужную версию Node.js
           cache: 'npm'
+
       - name: Install dependencies
         run: npm install
-      - name: Build
+
+      - name: Build project
         run: npm run build
+
+      - name: Export static HTML
+        run: npm run export
+
       - name: Setup Pages
         uses: actions/configure-pages@v3
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          # Upload dist repository
-          path: './dist'
+          # Укажите путь к экспоритрованному каталогу
+          path: 'out'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2

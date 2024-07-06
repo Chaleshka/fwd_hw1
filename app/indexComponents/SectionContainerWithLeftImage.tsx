@@ -12,7 +12,7 @@ const SectionContainerWithLeftImage: React.FC<SectionContainerWithLeftImageProps
         <section className="container">
             <div className="images-left">
                 {Array.from(image).map((image) => (
-                    <img className={image.class} src={image.src} alt={image.alt} />
+                    <img key={image.src} className={image.class} src={image.src} alt={image.alt} />
                 ))}
             </div>
             <div className="text" dangerouslySetInnerHTML={{ __html: text }} style={textStyles} />

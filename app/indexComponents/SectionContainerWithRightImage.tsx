@@ -13,7 +13,7 @@ const SectionContainerWithRightImageImage: React.FC<SectionContainerWithRightIma
             <div className="text" dangerouslySetInnerHTML={{ __html: text }} style={textStyles} />
             <div className="images-right">
                 {Array.from(image).map((image) => (
-                    <img className={image.class ? image.class : undefined} src={image.src} alt={image.alt} />
+                    <img key={image.src} className={image.class ? image.class : undefined} src={image.src} alt={image.alt} />
                 ))}
             </div>
         </section>
