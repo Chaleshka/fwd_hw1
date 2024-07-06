@@ -34,7 +34,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'  # Выберите нужную версию Node.js
+          node-version: '18'  # Выберите нужную версию Node.js, убедитесь, что она поддерживается Next.js
           cache: 'npm'
 
       - name: Install dependencies
@@ -46,15 +46,9 @@ jobs:
       - name: Export static HTML
         run: npm run export
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          # Укажите путь к экспоритрованному каталогу
-          path: 'out'
-
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out  # Укажите путь к экспортированному каталогу
+
