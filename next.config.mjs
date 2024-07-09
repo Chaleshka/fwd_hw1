@@ -2,6 +2,6 @@
 const nextConfig = {
     reactStrictMode: true,
     trailingSlash: true, // если требуется
-    output: 'export',};
+    output: 'build',};
 
 export default nextConfig;
