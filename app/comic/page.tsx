@@ -1,8 +1,7 @@
-"use client";
+import React from 'react';
+import { formatDistanceToNow } from 'date-fns';
+import BasicPage from '../BasicPage';
 
-import React from "react";
-import { formatDistanceToNow } from "date-fns";
-import "./../styles/comic.css";
 
 export interface Comic {
   id: number;
@@ -14,45 +13,36 @@ export interface Comic {
   day: number;
 }
 
-export default function Comic() {
-  const [comic, setComic] = React.useState<Comic | null>(null);
-  const [comicDate, setComicDate] = React.useState<Date>(new Date());
+async function fetchComicData() {
+  const email = 'and.pavlov@innopolis.university';
+  const apiUrl = `https://fwd.innopolis.university/api/hw2?email=${encodeURIComponent(email)}`;
 
-  React.useEffect(() => {
-      const fetchComic = async () => {
-          const email = "and.pavlov@innopolis.university";
-          const apiUrl = `https://fwd.innopolis.university/api/hw2?email=${encodeURIComponent(email)}`;
+  const idResponse = await fetch(apiUrl);
+  const id = await idResponse.text();
+  const comicUrl = `https://fwd.innopolis.university/api/comic?id=${id}`;
 
-            const idResponse = await fetch(apiUrl);
-            const id = await idResponse.text();
-            const comicUrl = `https://fwd.innopolis.university/api/comic?id=${id}`;
+  const comicResponse = await fetch(comicUrl);
+  const comicData: Comic = await comicResponse.json();
 
-            const comicResponse = await fetch(comicUrl);
-            const comicData: Comic = await comicResponse.json();
-            setComic(comicData);
-            setComicDate(new Date(comicData.year, comicData.month, comicData.day))
-      };
+  return comicData;
+}
 
-      fetchComic();
-  }, []);
+export default async function ComicPage() {
+  const comic = await fetchComicData();
+  const comicDate = new Date(comic.year, comic.month - 1, comic.day);
 
   return (
-    <html lang="en">
-      <head>
-        <meta charSet="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>My Personal Page</title>
-      </head>
-      <body>
-        <div className="container">
-          <h1 id="title">{comic?.safe_title}</h1>
-          <div id="comic-container" className="comic-container">
-              <img src={comic?.img} alt={comic?.alt} />
-              <p>Published on: {comicDate?.toLocaleDateString()} ({formatDistanceToNow(comicDate, { addSuffix: true })})</p>
-          </div>
+    <BasicPage title="XKCD Comic" description="Comic generated on fwd course">
+      <div className="container">
+        <h1 id="title">{comic.safe_title}</h1>
+        <div id="comic-container" className="comic-container">
+          <img src={comic.img} alt={comic.alt} />
+          <p>
+            Published on: {comicDate.toLocaleDateString()} (
+            {formatDistanceToNow(comicDate, { addSuffix: true })})
+          </p>
         </div>
-      </body>
-    </html>
+      </div>
+    </BasicPage>
   );
 }
