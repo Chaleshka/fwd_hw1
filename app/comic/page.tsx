@@ -2,7 +2,6 @@ import React from 'react';
 import { formatDistanceToNow } from 'date-fns';
 import BasicPage from '../BasicPage';
 
-
 export interface Comic {
   id: number;
   img: string;

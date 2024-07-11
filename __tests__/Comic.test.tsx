@@ -17,11 +17,11 @@ describe('ComicPage component', () => {
     expect(imgElement).toHaveAttribute('src', 'https://example.com/comic.jpg'); // Замените на реальный src изображения
   });
 
-//   test('Published date is displayed correctly', async () => {
-//     // render(<ComicPage />);
-//     const publishedDateElement = screen.getByText(/Published on:/i);
-//     expect(publishedDateElement).toBeInTheDocument();
-//     // Проверка формата даты и расстояния до текущего момента может быть сложной, зависит от текущей даты.
-//     // Например, можно проверить формат даты и наличие строки типа "2 days ago" или "in 2 days".
-//   });
+  //   test('Published date is displayed correctly', async () => {
+  //     // render(<ComicPage />);
+  //     const publishedDateElement = screen.getByText(/Published on:/i);
+  //     expect(publishedDateElement).toBeInTheDocument();
+  //     // Проверка формата даты и расстояния до текущего момента может быть сложной, зависит от текущей даты.
+  //     // Например, можно проверить формат даты и наличие строки типа "2 days ago" или "in 2 days".
+  //   });
 });

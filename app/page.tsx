@@ -15,7 +15,10 @@ export default function Home() {
   ]);
 
   return (
-    <BasicPage title='My Personal Page' description="It's just my personal page">
+    <BasicPage
+      title="My Personal Page"
+      description="It's just my personal page"
+    >
       <Navigation navs={navs} />
       <main>
         <AboutSection />
