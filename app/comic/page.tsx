@@ -17,7 +17,7 @@ async function fetchComicData() {
   const apiUrl = `https://fwd.innopolis.university/api/hw2?email=${encodeURIComponent(email)}`;
 
   const idResponse = await fetch(apiUrl);
-  const id = await idResponse.text();
+  const id = await idResponse.json();
   const comicUrl = `https://fwd.innopolis.university/api/comic?id=${id}`;
 
   const comicResponse = await fetch(comicUrl);
@@ -29,19 +29,16 @@ async function fetchComicData() {
 export default async function ComicPage() {
   const comic = await fetchComicData();
   const comicDate = new Date(comic.year, comic.month - 1, comic.day);
-
   return (
-    <BasicPage title="XKCD Comic" description="Comic generated on fwd course">
-      <div className="container">
-        <h1 id="title">{comic.safe_title}</h1>
-        <div id="comic-container" className="comic-container">
-          <img src={comic.img} alt={comic.alt} />
-          <p>
-            Published on: {comicDate.toLocaleDateString()} (
-            {formatDistanceToNow(comicDate, { addSuffix: true })})
-          </p>
-        </div>
+    <div className="container">
+      <h1 id="title">{comic.safe_title}</h1>
+      <div id="comic-container" className="comic-container">
+        <img src={comic.img} alt={comic.alt} />
+        <p>
+          Published on: {comicDate.toLocaleDateString().replace('/', '.')} (
+          {formatDistanceToNow(comicDate, { addSuffix: true })})
+        </p>
       </div>
-    </BasicPage>
+    </div>
   );
 }
